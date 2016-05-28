@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+const { bool, string, func, array, object } = PropTypes;
 
 const Header = props => {
   return (

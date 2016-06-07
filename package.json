@@ -8,8 +8,9 @@
     "production": "webpack -p",
     "lint": "eslint app/.; exit 0",
     "fix": "eslint --fix app/.; exit 0",
-    "test": "mocha --reporter spec tools/testSetup.js \"app/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test": "ava",
+    "ftest": "mocha --reporter spec tools/testSetup.js \"app/**/*.test.js\"",
+    "ftest:watch": "npm run test -- --watch"
   },
   "xzpository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "react-router": "^2.0.1"
   },
   "devDependencies": {
+    "ava": "^0.15.2",
     "babel-core": "^6.7.6",
     "babel-eslint": "^6.0.0-beta.6",
     "babel-loader": "^6.2.4",
@@ -58,5 +60,15 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "ava": {
+    "files": [
+      "app/**/*.test.js"
+    ],
+    "require": [
+      "babel-register",
+      "./tools/setup-browser-env.js"
+    ],
+    "babel": "inherit"
   }
 }

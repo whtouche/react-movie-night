@@ -26,7 +26,9 @@ const Main = props => {
           </form>
         </div>
         {props.searchResults
-          ? <div>{puke(props.searchResults)}</div>
+          // ? <div>{puke(props.searchResults)}</div>
+          // ? <div>{console.log(props.searchResults)}</div>
+          ? <div>{props.searchResults.map((result) => <li key={result.imdbID}>{result.Title}</li>)}</div>
           : <div></div>}
       </div>
   );

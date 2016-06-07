@@ -35,7 +35,7 @@ class MainContainer extends Component {
         <Main
           onSubmit={this.handleSubmit.bind(this)}
           onChange={this.handleChange.bind(this)}
-          searchResults={this.state.searchResults} />
+          searchResults={this.state.searchResults.Search} />
       </div>
     );
   }

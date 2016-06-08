@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import MovieResult from 'components/MovieResult/MovieResult';
 
 const Main = props => {
   function puke(obj) {
@@ -26,9 +27,9 @@ const Main = props => {
           </form>
         </div>
         {props.searchResults
-          // ? <div>{puke(props.searchResults)}</div>
-          // ? <div>{console.log(props.searchResults)}</div>
-          ? <div>{props.searchResults.map((result) => <li key={result.imdbID}>{result.Title}</li>)}</div>
+          ? <div>{props.searchResults.map((result) => <li key={result.imdbID}>
+            <MovieResult result={result} />
+          </li>)}</div>
           : <div></div>}
       </div>
   );
@@ -41,3 +42,14 @@ Main.propTypes = {
 };
 
 export default Main;
+
+// {props.searchResults
+// // ? <div>{puke(props.searchResults)}</div>
+// // ? <div>{console.log(props.searchResults)}</div>
+// ? <div>{props.searchResults.map((result) => <li key={result.imdbID}>{result.Title}</li>)}</div>
+// : <div></div>}
+// Poster
+// Title
+// Type
+// Year
+// imdbID

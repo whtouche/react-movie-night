@@ -17,7 +17,7 @@ class MainContainer extends Component {
     axios.get(`${baseUrl}${this.state.searchText}`)
       .then((response) => {
         this.setState({searchResults: response.data});
-        // console.log(response.data);
+        console.log(response.data);
       });
   }
 

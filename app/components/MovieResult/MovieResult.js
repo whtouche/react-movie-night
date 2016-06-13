@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
+import { container } from './styles.css';
 
 const MovieResult = props => {
   return (
-    <div>
+    <div className={container}>
       <div>
         <img src={props.result.Poster} alt={props.result.Title} />
       </div>

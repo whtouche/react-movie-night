@@ -27,9 +27,9 @@ const Main = props => {
           </form>
         </div>
         {props.searchResults
-          ? <div>{props.searchResults.map((result) => <li key={result.imdbID}>
-            <MovieResult result={result} />
-          </li>)}</div>
+          ? <div>
+              {props.searchResults.map((result) => <MovieResult key={result.imdbID} result={result} />)}
+            </div>
           : <div></div>}
       </div>
   );

@@ -8,9 +8,9 @@
     "production": "webpack -p",
     "lint": "eslint app/.; exit 0",
     "fix": "eslint --fix app/.; exit 0",
-    "test": "ava",
-    "ftest": "mocha --reporter spec tools/testSetup.js \"app/**/*.test.js\"",
-    "ftest:watch": "npm run test -- --watch"
+    "atest": "ava",
+    "test": "mocha --reporter spec tools/testSetup.js \"app/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "xzpository": {
     "type": "git",
@@ -51,8 +51,10 @@
     "html-webpack-plugin": "^2.15.0",
     "jsdom": "^9.2.0",
     "mocha": "^2.5.3",
+    "phantomjs-polyfill": "0.0.2",
     "react-addons-test-utils": "^15.1.0",
     "style-loader": "^0.13.1",
+    "wallaby-webpack": "0.0.22",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },

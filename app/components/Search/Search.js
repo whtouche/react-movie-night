@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import MovieResult from 'components/MovieResult/MovieResult';
 
-const Main = props => {
+const Search = props => {
   function puke(obj) {
     return <pre>{JSON.stringify(obj, null, ' ')}</pre>;
   }
@@ -35,13 +35,13 @@ const Main = props => {
   );
 };
 
-Main.propTypes = {
+Search.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   searchText: PropTypes.string.isRequired,
 };
 
-export default Main;
+export default Search;
 
 // {props.searchResults
 // // ? <div>{puke(props.searchResults)}</div>

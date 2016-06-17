@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { container, innerContainer } from './styles.css';
-import Main from 'components/Main/Main';
+import Search from 'components/Search/Search';
 
 import axios from 'axios';
 
-class MainContainer extends Component {
+class SearchContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -31,8 +31,8 @@ class MainContainer extends Component {
   render() {
     return (
       <div>
-      <h1>{'Heading'}</h1>
-        <Main
+        <h1>{'Heading'}</h1>
+        <Search
           onSubmit={this.handleSubmit.bind(this)}
           onChange={this.handleChange.bind(this)}
           searchResults={this.state.searchResults.Search} />
@@ -41,8 +41,8 @@ class MainContainer extends Component {
   }
 }
 
-MainContainer.propTypes = {
+SearchContainer.propTypes = {
 
 };
 
-export default MainContainer;
+export default SearchContainer;

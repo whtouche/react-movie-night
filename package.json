@@ -25,6 +25,7 @@
   "homepage": "https://github.com/ReactjsProgram/Redux-Immutable#readme",
   "dependencies": {
     "axios": "^0.11.1",
+    "babel-plugin-module-alias": "^1.4.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.0.1"

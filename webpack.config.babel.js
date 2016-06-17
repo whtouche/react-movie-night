@@ -38,9 +38,6 @@ const base = {
       { test: /\.css$/, loader: 'style!css?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]' },
     ],
   },
-  resolve: {
-    root: path.resolve('./app'),
-  },
 };
 
 const developmentConfig = {
@@ -50,6 +47,7 @@ const developmentConfig = {
     hot: true,
     inline: true,
     progress: true,
+    historyApiFallback: true,
   },
   plugins: [HTMLWebpackPluginConfig, new webpack.HotModuleReplacementPlugin()],
 };

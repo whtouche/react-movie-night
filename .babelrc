@@ -1,14 +1,23 @@
 {
-  presets: [
-    'react',
-    'es2015',
-    'stage-0'
+  "presets": [
+    "react",
+    "es2015",
+    "stage-0"
   ],
-  env: {
-    start: {
-      presets: [
-        'react-hmre'
+  "env": {
+    "start": {
+      "presets": [
+        "react-hmre"
       ]
     }
-  }
+  },
+    "plugins": [
+    ["module-alias", [
+      { "src": "./app/components", "expose": "components" },
+      { "src": "./app/config", "expose": "config" },
+      { "src": "./app/containers", "expose": "containers" },
+      { "src": "./app/helpers", "expose": "helpers" },
+      { "src": "./app/sharedStyles", "expose": "sharedStyles" },
+    ]]
+  ]
 }

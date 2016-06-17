@@ -38,18 +38,7 @@ const Search = props => {
 Search.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  searchText: PropTypes.string.isRequired,
+  searchText: PropTypes.string,
 };
 
 export default Search;
-
-// {props.searchResults
-// // ? <div>{puke(props.searchResults)}</div>
-// // ? <div>{console.log(props.searchResults)}</div>
-// ? <div>{props.searchResults.map((result) => <li key={result.imdbID}>{result.Title}</li>)}</div>
-// : <div></div>}
-// Poster
-// Title
-// Type
-// Year
-// imdbID

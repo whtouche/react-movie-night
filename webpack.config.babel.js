@@ -1,6 +1,8 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import FlowStatusWebpackPlugin from 'flow-status-webpack-plugin';
+
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: path.join(__dirname, '/app/index.html'),
   filename: 'index.html',
@@ -49,7 +51,7 @@ const developmentConfig = {
     progress: true,
     historyApiFallback: true,
   },
-  plugins: [HTMLWebpackPluginConfig, new webpack.HotModuleReplacementPlugin()],
+  plugins: [HTMLWebpackPluginConfig, new webpack.HotModuleReplacementPlugin(), new FlowStatusWebpackPlugin()],
 };
 
 const productionConfig = {

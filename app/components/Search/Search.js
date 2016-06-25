@@ -8,7 +8,7 @@ const Search = props => {
 
   return (
       <div>
-        <h1>{'Movie Night!'}</h1>
+        <h1>{'Search'}</h1>
         <div>
           <form onSubmit={props.onSubmit}>
             <div>

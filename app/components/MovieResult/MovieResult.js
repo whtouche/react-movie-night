@@ -8,8 +8,9 @@ const MovieResult = props => {
         <img src={props.result.Poster} alt={props.result.Title} />
       </div>
       <div>
-        <h3>{props.result.Title}</h3>
-        <p><strong>{'imdbID:'} </strong>{props.result.imdbID}</p>
+        <h3>{'Title:'} {props.result.title}</h3>
+        <h3>{'Poster:'}{props.result}</h3>
+        <h3>{'imdb id:'}{props.result.alternate_ids}</h3>
       </div>
     </div>
   );

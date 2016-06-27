@@ -2,6 +2,9 @@ import React, {PropTypes} from 'react';
 import MovieResult from 'components/MovieResult/MovieResult';
 
 const Search = props => {
+  props.searchResults.map(result => console.log('result: ', result));
+  console.log('props: ', props);
+
   function puke(obj) {
     return <pre>{JSON.stringify(obj, null, ' ')}</pre>;
   }
@@ -26,11 +29,11 @@ const Search = props => {
             </div>
           </form>
         </div>
-        {props.searchResults
+        {!!props.searchResults
           ? <div>
-              {props.searchResults.map((result) => <MovieResult key={result.imdbID} result={result} />)}
+              {props.searchResults.map((result) => <MovieResult key={result.id} result={result} />)}
             </div>
-          : <div></div>}
+          : <div>{'nothing to see'}</div>}
       </div>
   );
 };
@@ -39,6 +42,7 @@ Search.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   searchText: PropTypes.string,
+  searchResults: PropTypes.array.isRequired,
 };
 
 export default Search;

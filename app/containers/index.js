@@ -1,1 +1,2 @@
-export MainContainer from './Main/MainContainer';
+export SearchContainer from './Search/SearchContainer';
+export ResultsContainer from './Results/ResultsContainer';

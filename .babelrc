@@ -18,6 +18,7 @@
       { "src": "./app/containers", "expose": "containers" },
       { "src": "./app/helpers", "expose": "helpers" },
       { "src": "./app/sharedStyles", "expose": "sharedStyles" },
+      { "src": "./app/redux/modules", "expose": "modules" },
     ]]
   ]
 }

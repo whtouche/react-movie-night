@@ -1,2 +1,3 @@
-* Migrate from omdb to rotten tomatoes api
-* create single upcoming movie cmp
+* add movie search
+* add authentication
+* add persisted storage

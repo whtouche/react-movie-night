@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Movie } from 'components';
 import getMovies from 'helpers/rottenTomatoesHelpers';
+import { connect } from 'react-redux';
 
 class NowPlaying extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class NowPlaying extends Component {
   render() {
     return (
       <div>
-        {this.state.movies.map(movie => <Movie movie={movie} key={movie.id} />)}
+        {this.state.movies.map(movie => <Movie movie={movie} key={movie.id} />) }
       </div>
     );
   }
@@ -30,4 +31,12 @@ NowPlaying.propTypes = {
 
 };
 
-export default NowPlaying;
+function mapStateToProps(state) {
+  console.log('state: ', state);
+  return {
+  };
+}
+
+export default connect(
+  mapStateToProps,
+)(NowPlaying);

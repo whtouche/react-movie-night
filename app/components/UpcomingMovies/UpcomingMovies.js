@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Movie } from 'components';
+import { connect } from 'react-redux';
 
 import getMovies from 'helpers/rottenTomatoesHelpers';
 
@@ -32,4 +33,14 @@ UpcomingMovies.propTypes = {
 
 };
 
-export default UpcomingMovies;
+// export default UpcomingMovies;
+
+function mapStateToProps(state) {
+  console.log('state: ', state);
+  return {
+  };
+}
+
+export default connect(
+  mapStateToProps,
+)(UpcomingMovies);

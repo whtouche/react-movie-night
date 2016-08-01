@@ -1,6 +1,17 @@
+import getMovies from 'helpers/rottenTomatoesHelpers';
+
 const FETCHING_UPCOMING = 'FETCHING_UPCOMING';
 const FETCHING_UPCOMING_ERROR = 'FETCHING_UPCOMING_ERROR';
 const FETCHING_UPCOMING_SUCCESS = 'FETCHING_UPCOMING_SUCCESS';
+
+export function fetchUpcoming() {
+  return function (dispatch) {
+    getMovies('upcoming')
+      .then(movies => {
+        dispatch(fetchingUpcomingSuccess(movies));
+      }).catch(error => dispatch(fetchingUpcomingError(error)));
+  };
+}
 
 export function fetchingUpcoming() {
   return {

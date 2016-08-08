@@ -7,6 +7,7 @@ const FETCHING_UPCOMING_SUCCESS = 'FETCHING_UPCOMING_SUCCESS';
 export function fetchUpcoming() {
   return function (dispatch) {
     getMovies('upcoming')
+      .then(response => response.json())
       .then(movies => {
         dispatch(fetchingUpcomingSuccess(movies));
       }).catch(error => dispatch(fetchingUpcomingError(error)));
@@ -28,7 +29,7 @@ export function fetchingUpcomingError(error) {
 
 export function fetchingUpcomingSuccess(movies) {
   return {
-    type: FETCHING_UPCOMING_ERROR,
+    type: FETCHING_UPCOMING_SUCCESS,
     movies,
   };
 }

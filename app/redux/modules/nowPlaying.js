@@ -1,6 +1,18 @@
+import getMovies from 'helpers/rottenTomatoesHelpers';
+
 const FETCHING_NOW_PLAYING = 'FETCHING_NOW_PLAYING';
 const FETCHING_NOW_PLAYING_ERROR = 'FETCHING_NOW_PLAYING_ERROR';
 const FETCHING_NOW_PLAYING_SUCCESS = 'FETCHING_NOW_PLAYING_SUCCESS';
+
+export function fetchNowPlaying() {
+  return function (dispatch) {
+    getMovies('in_theaters')
+      .then(response => response.json())
+      .then(movies => {
+        dispatch(fetchingNowPlayingSuccess(movies));
+      }).catch(error => dispatch(fetchingNowPlayingError(error)));
+  };
+}
 
 export function fetchingNowPlaying() {
   return {
@@ -17,7 +29,7 @@ export function fetchingNowPlayingError(error) {
 
 export function fetchingNowPlayingSuccess(movies) {
   return {
-    type: FETCHING_NOW_PLAYING_ERROR,
+    type: FETCHING_NOW_PLAYING_SUCCESS,
     movies,
   };
 }

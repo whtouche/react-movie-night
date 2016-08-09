@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Movie } from 'components';
-import getMovies from 'helpers/rottenTomatoesHelpers';
 import { connect } from 'react-redux';
+
+import { bindActionCreators } from 'redux';
+import * as nowPlayingActionCreators from 'modules/nowPlaying';
 
 class NowPlaying extends Component {
   constructor(props) {
@@ -12,16 +14,13 @@ class NowPlaying extends Component {
   }
 
   componentDidMount() {
-    getMovies('in_theaters')
-      .then(response => response.json())
-      .then(json => {
-        this.setState({ movies: json.movies });
-      });
+    this.props.fetchNowPlaying();
   }
+
   render() {
     return (
-      <div>
-        {this.state.movies.map(movie => <Movie movie={movie} key={movie.id} />) }
+      <div className='foo'>
+        {this.props.nowPlaying.nowPlaying.movies.map(movie => <Movie movie={movie} key={movie.id} />)}
       </div>
     );
   }
@@ -34,9 +33,15 @@ NowPlaying.propTypes = {
 function mapStateToProps(state) {
   console.log('state: ', state);
   return {
+    nowPlaying: state.nowPlaying,
   };
+}
+
+function mapDispatchToProps(dispatch, props) {
+  return bindActionCreators(nowPlayingActionCreators, dispatch);
 }
 
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(NowPlaying);

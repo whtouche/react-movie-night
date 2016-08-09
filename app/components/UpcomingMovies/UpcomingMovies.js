@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as upcomingActionCreators from 'modules/upcoming';
 
-import getMovies from 'helpers/rottenTomatoesHelpers';
-
 class UpcomingMovies extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +19,7 @@ class UpcomingMovies extends Component {
   render() {
     return (
       <div className='upcomingMoviesList'>
-        {this.props.upcoming.upcoming.movies.map(movie => <Movie movie={movie} key={movie.id} />)}
+        {this.props.upcoming.upcoming.movies.map(movie => <Movie movie={movie} key={movie.id} />) }
       </div>
     );
   }
@@ -32,6 +30,7 @@ UpcomingMovies.propTypes = {
 };
 
 function mapStateToProps(state) {
+  console.log('state: ', state);
   return {
     upcoming: state.upcoming,
   };

@@ -31,7 +31,6 @@ NowPlaying.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log('state: ', state);
   return {
     nowPlaying: state.nowPlaying,
   };

@@ -30,7 +30,6 @@ UpcomingMovies.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log('state: ', state);
   return {
     upcoming: state.upcoming,
   };

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { nav } from './styles.css';
 
-var Main = React.createClass({
-  render: function () {
+export default class Main extends Component {
+  render() {
     return (
       <div>
         <h1>{'Movie Night!'}</h1>
@@ -23,11 +23,14 @@ var Main = React.createClass({
               {'Now Playing'}
             </Link>
           </li>
+          <li>
+            <Link to='/watchlist'>
+              {'Watch List'}
+            </Link>
+          </li>
         </ul>
         {this.props.children}
       </div>
     );
-  },
-});
-
-module.exports = Main;
+  }
+}

@@ -9,6 +9,7 @@ export function fetchUpcoming() {
     getMovies('upcoming')
       .then(response => response.json())
       .then(movies => {
+        dispatch(fetchingUpcoming());
         dispatch(fetchingUpcomingSuccess(movies));
       }).catch(error => dispatch(fetchingUpcomingError(error)));
   };
@@ -17,6 +18,7 @@ export function fetchUpcoming() {
 export function fetchingUpcoming() {
   return {
     type: FETCHING_UPCOMING,
+    isFetching: true,
   };
 }
 
@@ -30,6 +32,7 @@ export function fetchingUpcomingError(error) {
 export function fetchingUpcomingSuccess(movies) {
   return {
     type: FETCHING_UPCOMING_SUCCESS,
+    isFetching: false,
     movies,
   };
 }

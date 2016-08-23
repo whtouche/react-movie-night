@@ -2,9 +2,11 @@ import React, { PropTypes } from 'react';
 import { container } from './styles.css';
 
 const Movie = ({movie}) => {
+  console.log('movie: ', movie);
   const movieQuery = movie.title.split(' ').join('+');
   const splitDate = movie.release_dates.theater.split('-');
   const parsedDate = new Date(splitDate[0], (splitDate[1] - 1), splitDate[2]);
+
   return (
     <div className={container}>
       <h3>{'Title: '}<a href={`https://www.youtube.com/results?search_query=${movieQuery}+trailer`} target='_blank'>{movie.title}</a></h3>

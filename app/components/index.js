@@ -3,3 +3,4 @@ export Main from './Main/Main';
 export UpcomingMovies from './UpcomingMovies/UpcomingMovies';
 export Movie from './Movie/Movie';
 export NowPlaying from './NowPlaying/NowPlaying';
+export WatchList from './WatchList/WatchList';
